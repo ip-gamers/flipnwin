@@ -1,0 +1,478 @@
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<div class="preview-txt visible">
+    <div id="hints">
+        <button onclick="pview()">
+            <span class="text">🖱️ СТАРТ</span>
+        </button>
+    </div>
+    <div class="instruct">
+        <h3>Как играть:</h3>
+        <ul class="items">
+            <li>В колоде 6 пар карт, перетасованных случайным образом. Сопоставьте все карты, чтобы выиграть игру.
+                <p>
+                <div class="smol">
+                    <img src="https://ip-gamers.net/downloads/Ever/pages_media/primg.png" alt="">
+                </div>
+            <li>
+                <p>Не забудьте завершить игру с минимальным количеством бросков, прежде чем истечет таймер!!!</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="game-ovr-txt" class="overlay-txt">
+    ТЫ ПРОИГРАЛ👎💀
+    <span class="restart-overlay">🖱️ РЕСТАРТ!</span>
+</div>
+<div id="win-ovr-txt" class="overlay-txt">
+    🎉ЧЕМПИОН!!!🎉
+    <span class="restart-overlay">🖱️ РЕСТАРТt</span>
+</div>
+<div class="app-background">
+    <img src="https://ip-gamers.net/downloads/Ever/pages_media/download.jfif" alt="">
+</div>
+
+<div class="game-package">
+    <div class="game-var">
+        <div class="game-var-info">
+            Время: <span id="time-countdown" class="warn">30</span>
+        </div>
+        <div class="game-var-info">
+            Броски: <span id="flips-counter">0</span>
+        </div>
+    </div>
+    <div class="token ">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/Captain.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/Captain.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/Hawkeye.png" alt="" />
+        </div>
+    </div>
+    <div class="token ">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/Hawkeye.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/antman.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/antman.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/ironman.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/ironman.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/spidy.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/spidy.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/black_panther.png" alt="" />
+        </div>
+    </div>
+    <div class="token">
+        <div class="token-back face">
+            <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+            <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+            <img class="fface bface-tright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-tleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bright"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="fface bface-bleft"
+                src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png" alt="" />
+            <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/black_panther.png" alt="" />
+        </div>
+    </div>
+    <!-- <div class="token">
+    <div class="token-back face">
+      <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+    </div>
+    <div class="token-front face">
+      <img
+        class="fface bface-tright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-tleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/thanos.png" alt="" />
+    </div>
+  </div>
+  <div class="token">
+    <div class="token-back face">
+      <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+    </div>
+    <div class="token-front face">
+      <img
+        class="fface bface-tright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-tleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/thanos.png" alt="" />
+    </div>
+  </div>
+  <div class="token">
+    <div class="token-back face">
+      <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+    </div>
+    <div class="token-front face">
+      <img
+        class="fface bface-tright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-tleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/strange.png" alt="" />
+    </div>
+  </div>
+  <div class="token">
+    <div class="token-back face">
+      <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+    </div>
+    <div class="token-front face">
+      <img
+        class="fface bface-tright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-tleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/strange.png" alt="" />
+    </div>
+  </div>
+  <div class="token">
+    <div class="token-back face">
+      <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+    </div>
+    <div class="token-front face">
+      <img
+        class="fface bface-tright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-tleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/thor.png" alt="" />
+    </div>
+  </div>
+  <div class="token">
+    <div class="token-back face">
+      <img class="bface bface-tright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-tleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bright" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="bface bface-bleft" src="https://ip-gamers.net/downloads/Ever/pages_media/floral2.png" alt="" />
+      <img class="centerITM" src="https://ip-gamers.net/downloads/Ever/pages_media/NEW.png" alt="" />
+    </div>
+    <div class="token-front face">
+      <img
+        class="fface bface-tright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-tleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bright"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="fface bface-bleft"
+        src="https://ip-gamers.net/downloads/Ever/pages_media/cborder-removebg-preview.png"
+        alt=""
+      />
+      <img class="card-icon" src="https://ip-gamers.net/downloads/Ever/pages_media/thor.png" alt="" />
+    </div> -->
+</div>
